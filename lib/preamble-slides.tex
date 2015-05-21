@@ -1,0 +1,43 @@
+%% Font (e.g., times, newcent, fourier)
+\usefonttheme{serif} % Font theme: serif
+\usepackage{fourier}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx,color,tikz}
+
+%% Two columns
+\newcommand{\columnsbegin}{\begin{columns}}
+\newcommand{\columnsend}{\end{columns}}
+%\setbeamertemplate{background}{%
+%   \includegraphics[width=1.2\paperwidth,height=\paperwidth]{img/BG_upper.jpg}
+%}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{img/BG_upper}}
+
+
+%% Set Beamer Template
+\setbeamertemplate{frametitle}{\color{black!80!white}\bfseries\insertframetitle\par\vskip-6pt\hrulefill}
+\setbeamerfont{title}{series=\bfseries,size=\LARGE,parent=structure}
+\setbeamertemplate{navigation symbols}{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Title Page
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\defbeamertemplate*{title page}{customized}[1][]
+{ 
+\begin{center}
+	\begin{tikzpicture}
+		\node[inner sep=0pt,above right,align=center,text width=\textwidth] (title) {\inserttitle};
+	\end{tikzpicture}
+	\quad
+
+	\vspace{1em}
+	\footnotesize\textcolor{gray}{\insertauthor \texttt{[ablasco@fas.harvard.edu]}}
+	\vspace{.5em}
+	
+	\includegraphics[height=1.5cm]{img/ntl-logo.png} \quad
+	\includegraphics[height=1.5cm]{img/harvard-logo.png}\\
+   \footnotesize\textcolor{gray}{In collaboration with  ... }\\
+   \normalsize\textcolor{black!50!red}{\insertdate}
+\end{center}
+}
+
