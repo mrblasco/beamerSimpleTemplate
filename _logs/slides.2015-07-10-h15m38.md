@@ -4,7 +4,7 @@
 
 # Introduction
 ## Example
-It is just an example
+>> It is just an example
 
 # Body
 ## In progress

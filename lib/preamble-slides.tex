@@ -1,22 +1,43 @@
+%%
+%\author[Andrea Blasco]{Andrea Blasco | ablasco@fas.harvard.edu}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\usepackage{multirow}
+\usepackage{xcolor,colortbl}
+
+
+%% Notes
+%\setbeameroption{show notes}
+%\setbeamerfont{title}{series=\bfseries,size=\LARGE,parent=structure}
+%\setbeamertemplate{frametitle}{\color{black!80!white}\bfseries\insertframetitle\par\vskip-6pt\hrulefill}
+\setbeamertemplate{navigation symbols}{}
+\usecolortheme{dove} % crane,seahorse,seagull,rose,orchid
+
+
 %% Font (e.g., times, newcent, fourier)
-\usefonttheme{serif} % Font theme: serif
-\usepackage{fourier}
+%\usepackage{fourier}
+\usefonttheme{professionalfonts} % using non standard fonts for beamer
+%\usefonttheme{serif} % default family is serif
+\setmainfont{Arial}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx,color,tikz}
+\usepackage[english]{babel} 
+\usepackage{arydshln}            %% \hdashline, \cdashline{1-2}
+\usepackage{array}               %% Set column width
+\usepackage{calc}
+\usetikzlibrary{positioning}
+
+%% Tabular Columns
+%\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+%\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}b{#1}}
+%\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}b{#1}}
 
 %% Two columns
 \newcommand{\columnsbegin}{\begin{columns}}
 \newcommand{\columnsend}{\end{columns}}
-%\setbeamertemplate{background}{%
-%   \includegraphics[width=1.2\paperwidth,height=\paperwidth]{img/BG_upper.jpg}
-%}
-%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{img/BG_upper}}
 
-
-%% Set Beamer Template
-\setbeamertemplate{frametitle}{\color{black!80!white}\bfseries\insertframetitle\par\vskip-6pt\hrulefill}
-\setbeamerfont{title}{series=\bfseries,size=\LARGE,parent=structure}
-\setbeamertemplate{navigation symbols}{}
+%% Blocks
+\newcommand{\Red}[1]{{\bf\textcolor{black!50!red}{#1}}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -24,20 +45,124 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \defbeamertemplate*{title page}{customized}[1][]
 { 
+\setlength{\baselineskip}{16pt}
 \begin{center}
 	\begin{tikzpicture}
-		\node[inner sep=0pt,above right,align=center,text width=\textwidth] (title) {\inserttitle};
+		\node[
+		      ,inner sep=6pt
+%   		   ,above right
+            ,font=\sffamily
+	   	   ,align=center
+		      ,text width=\textwidth
+		   ] (title) {\fontspec{Optima}\bfseries\Large\inserttitle};
 	\end{tikzpicture}
 	\quad
 
 	\vspace{1em}
-	\footnotesize\textcolor{gray}{\insertauthor \texttt{[ablasco@fas.harvard.edu]}}
+	\fontspec{Optima}\normalsize\textcolor{black!50!white}{\insertauthor}
+%	\footnotesize\textcolor{gray}{\insertauthor}
 	\vspace{.5em}
 	
-	\includegraphics[height=1.5cm]{img/ntl-logo.png} \quad
-	\includegraphics[height=1.5cm]{img/harvard-logo.png}\\
-   \footnotesize\textcolor{gray}{In collaboration with  ... }\\
-   \normalsize\textcolor{black!50!red}{\insertdate}
+	\includegraphics[height=1.75cm]{img/theme/ntl-logo.png} \quad
+	\includegraphics[height=1.75cm]{img/theme/harvard-logo.png}\\
+	\vspace{.5em}
+   \normalsize\textcolor{black!50!red}{\insertdate}\\
+	\vspace{.5em}
+   \normalsize\textcolor{black!50!white}{with  E. Isselbacher, O. Jung, K. Lakhani, M. Menietti}
 \end{center}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Footline
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\defbeamertemplate*{footline}{my footline}
+{%
+  \leavevmode%
+   \ifnum \insertpagenumber=1
+      \hbox{%
+      \begin{beamercolorbox}[
+            ,wd=\paperwidth
+            ,ht=2.25ex
+            ,dp=1ex
+            ,center
+         ]{author in head/foot}%
+      \end{beamercolorbox}
+      }   
+   \else
+      \hbox{%
+      \begin{beamercolorbox}[
+            ,wd=\paperwidth
+            ,ht=2.5ex
+            ,dp=1.125ex
+            ,leftskip=.3cm
+            ,rightskip=.3cm plus1fil
+            ]{title in head/foot}%
+          \usebeamerfont{title in head/foot}{\textit \insertshorttitle}%
+          \hskip2ex plus1fill
+            \insertframenumber/\inserttotalframenumber
+       \end{beamercolorbox}%
+      }%
+   \fi
+}
+
+
+%% Thanks
+\newcommand{\thankyou}{
+\begin{center}
+	\begin{tikzpicture}
+		\node[
+		      ,inner sep=6pt
+            ,font=\sffamily
+	   	   ,align=center
+		      ,text width=\textwidth
+		   ] (title) {\fontspec{Optima}\bfseries\Large Thanks!};
+	\end{tikzpicture}
+	\fontspec{Optima}\normalsize\textcolor{black!50!white}{\insertauthor}
+\end{center}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Font (e.g., times, newcent, fourier)
+%\usefonttheme{serif} % Font theme: serif
+%\usepackage{fourier}
+%\usepackage{amsmath,amssymb}
+%\usepackage{graphicx,color,tikz}
+%
+% Two columns
+%\newcommand{\columnsbegin}{\begin{columns}}
+%\newcommand{\columnsend}{\end{columns}}
+%\setbeamertemplate{background}{%
+%   \includegraphics[width=1.2\paperwidth,height=\paperwidth]{img/BG_upper.jpg}
+%}
+%\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{img/BG_upper}}
+%
+%
+% Set Beamer Template
+%\setbeamertemplate{frametitle}{\color{black!80!white}\bfseries\insertframetitle\par\vskip-6pt\hrulefill}
+%\setbeamerfont{title}{series=\bfseries,size=\LARGE,parent=structure}
+%\setbeamertemplate{navigation symbols}{}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%  Title Page
+%%%%%%%%%%%%%%%%%%%%%%%%
+%\defbeamertemplate*{title page}{customized}[1][]
+%{ 
+%\begin{center}
+%	\begin{tikzpicture}
+%		\node[inner sep=0pt,above right,align=center,text width=\textwidth] (title) {\inserttitle};
+%	\end{tikzpicture}
+%	\quad
+%
+%	\vspace{1em}
+%	\footnotesize\textcolor{gray}{\insertauthor \texttt{[ablasco@fas.harvard.edu]}}
+%	\vspace{.5em}
+%	
+%	\includegraphics[height=1.5cm]{img/ntl-logo.png} \quad
+%	\includegraphics[height=1.5cm]{img/harvard-logo.png}\\
+%   \footnotesize\textcolor{gray}{In collaboration with  ... }\\
+%   \normalsize\textcolor{black!50!red}{\insertdate}
+%\end{center}
+%}
+%
