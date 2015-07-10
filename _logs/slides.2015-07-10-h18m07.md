@@ -122,9 +122,9 @@ __Quality of ideas__
 
 # Conclusions
 
-- Evidence is consistent with theory: prizes raise participation (help private provision of public goods)
-- Evidence of differences in preferences between the genders [as in @croson2009gender] may have strong practical implications
-- Quality unchanged after monetary incentives (what is the underlying cost function?)
+- Evidence is consistent with theory: prizes raise participation (helps private provision of public goods)
+- Evidence of different preferences between the genders [as in @croson2009gender] may have strong practical implications
+- Quality unchanged by monetary incentives (what is the underlying cost function for quality?)
 
 ------------
 

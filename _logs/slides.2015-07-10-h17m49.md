@@ -54,7 +54,9 @@ __Outcomes:__ (a) the decision to participate with a submission (b) the quality 
 
 -------------
 
->> Submit your ideas to [__(1)win an Apple iPad mini| (2.1)improve patient care at HC | (2.2)Improve the workplace at HC | (2.3)win project funding up to \$20,000 to turn your ideas into actions__]
+\fontspec{Courier}
+
+>> Submit your ideas to [__(1)win an Apple iPad mini| (2.1)improve patient care at the Heart Center| (2.2)Improve the workplace at the Heart Center| (2.3)win project funding up to \$20,000 to turn your ideas into actions__]
 
 >> [...] All [employees] are eligible to submit ideas online. We encourage you to submit as many ideas as you have: no ideas are too big or too small!
 
@@ -122,9 +124,9 @@ __Quality of ideas__
 
 # Conclusions
 
-- Evidence is consistent with theory: prizes raise participation (help private provision of public goods)
-- Evidence of differences in preferences between the genders [as in @croson2009gender] may have strong practical implications
-- Quality unchanged after monetary incentives (what is the underlying cost function?)
+- Evidence is consistent with theory: prizes raise participation (helps private provision of public goods)
+- Evidence of different preferences between the genders [as in @croson2009gender] may have strong practical implications
+- Quality unchanged by monetary incentives (what is the underlying cost function for quality?)
 
 ------------
 
